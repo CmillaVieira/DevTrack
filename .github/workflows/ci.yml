@@ -1,0 +1,38 @@
+
+name: DevTrack CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  docker-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+
+      - name: Construir imagem Docker
+        run: docker build -t devtrack:1.0 .
+
+      - name: Executar container
+        run: docker run -d --name devtrack-container -p 3000:3000 devtrack:1.0
+
+      - name: Testar rota health
+        run: curl --fail http://127.0.0.1:3000/health
+
+      - name: Testar página principal
+        run: curl --fail http://127.0.0.1:3000/
+
+      - name: Testar API de tarefas
+        run: curl --fail http://127.0.0.1:3000/api/tasks
+
+      - name: Executar testes automatizados
+        run: npm test
+
+      - name: Encerrar container
+        if: always()
+        run: docker rm -f devtrack-container
