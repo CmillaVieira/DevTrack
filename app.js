@@ -8,7 +8,7 @@ const publicDir = path.join(__dirname, "public");
 const server = http.createServer((req, res) => {
   if (req.url === "/health") {
     res.writeHead(200, { "Content-Type": "application/json" });
-    return res.end(JSON.stringify({ status: "ok" }));
+    return res.end(JSON.stringify({ status: "erro" }));
   }
 
   if (req.url === "/api/tasks") {
