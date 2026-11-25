@@ -21,6 +21,18 @@ jobs:
       - name: Executar container
         run: docker run -d --name devtrack-container -p 3000:3000 devtrack:1.0
 
+      - name: Aguardar aplicação iniciar
+        run: |
+          for i in {1..30}; do
+            if curl --fail http://127.0.0.1:3000/health; then
+              echo "Aplicação pronta!"
+              exit 0
+            fi
+            sleep 1
+          done
+          docker logs devtrack-container
+          exit 1
+
       - name: Testar rota health
         run: curl --fail http://127.0.0.1:3000/health
 
