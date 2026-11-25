@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevTrack | Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="logo-icon">&lt;/&gt;</span>
+        <span>DevTrack</span>
+      </div>
+
+      <p class="menu-label">MENU PRINCIPAL</p>
+
+      <nav>
+        <a href="#" class="nav-item active">
+          <span>▦</span> Dashboard
+        </a>
+        <a href="#tarefas" class="nav-item">
+          <span>☑</span> Minhas tarefas
+        </a>
+        <a href="#trilha" class="nav-item">
+          <span>⌘</span> Minha jornada
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="profile">
+          <div class="avatar">D</div>
+          <div>
+            <strong>Dev Explorer</strong>
+            <small>Estudante de TI</small>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <span class="breadcrumb">Workspace / Dashboard</span>
+          <h1>Dashboard</h1>
+        </div>
+        <div class="status">
+          <span class="status-dot"></span>
+          Sistema online
+        </div>
+      </header>
+
+      <section class="welcome">
+        <div>
+          <p class="eyebrow">SEU ESPAÇO DE DESENVOLVIMENTO</p>
+          <h2>Continue construindo<br> seu futuro em tecnologia.</h2>
+          <p class="welcome-text">
+            Organize seus estudos, acompanhe seus objetivos
+            e transforme aprendizado em projetos.
+          </p>
+        </div>
+        <div class="welcome-icon">&lt;/&gt;</div>
+      </section>
+
+      <section class="stats">
+        <article class="stat-card">
+          <div class="stat-top">
+            <span>Tarefas concluídas</span>
+            <span class="stat-icon green">✓</span>
+          </div>
+          <h3 id="completed-count">0</h3>
+          <p>Atividades finalizadas</p>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-top">
+            <span>Tarefas pendentes</span>
+            <span class="stat-icon orange">◷</span>
+          </div>
+          <h3 id="pending-count">0</h3>
+          <p>Próximos objetivos</p>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-top">
+            <span>Progresso geral</span>
+            <span class="stat-icon blue">↗</span>
+          </div>
+          <h3 id="progress-count">0%</h3>
+          <p>Da sua lista de tarefas</p>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel tasks-panel" id="tarefas">
+          <div class="panel-header">
+            <div>
+              <h3>Minha lista de tarefas</h3>
+              <p>Organize seus próximos passos</p>
+            </div>
+            <span class="panel-tag">OBJETIVOS</span>
+          </div>
+
+          <div class="task-list" id="task-list">
+            <p class="loading">Carregando tarefas...</p>
+          </div>
+        </article>
+
+        <article class="panel journey-panel" id="trilha">
+          <div class="panel-header">
+            <div>
+              <h3>Minha jornada</h3>
+              <p>Áreas de aprendizado</p>
+            </div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-info">
+              <span>JavaScript</span>
+              <span>80%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill js-fill"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-info">
+              <span>Git & GitHub</span>
+              <span>65%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill git-fill"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-info">
+              <span>Docker</span>
+              <span>40%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill docker-fill"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-info">
+              <span>HTML & CSS</span>
+              <span>90%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill html-fill"></div>
+            </div>
+          </div>
+
+          <div class="tip">
+            <span class="tip-icon">✦</span>
+            <div>
+              <strong>Um passo de cada vez</strong>
+              <p>Consistência é o que transforma conhecimento em habilidade.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <footer>
+        <span>DevTrack © 2026</span>
+        <span>Desenvolvido para acompanhar sua jornada em TI.</span>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
